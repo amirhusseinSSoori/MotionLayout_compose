@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.MotionLayout
 import androidx.compose.material.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.graphics.*
 
 
@@ -30,9 +31,9 @@ fun MotionLayoutDemo() {
 
 @Composable
 private fun ColorMotion() {
-    var animateImage by remember { mutableStateOf(false) }
+    var animateImage by rememberSaveable{ mutableStateOf(false) }
     var colorSurface by remember { mutableStateOf(Color.White) }
-    var color by remember { mutableStateOf(R.drawable.ic_lens) }
+    var color by rememberSaveable { mutableStateOf(R.drawable.ic_lens) }
     val imageAnimationProgress by animateFloatAsState(
         targetValue = if (animateImage) 1f else 0f,
         animationSpec = tween(1750)
