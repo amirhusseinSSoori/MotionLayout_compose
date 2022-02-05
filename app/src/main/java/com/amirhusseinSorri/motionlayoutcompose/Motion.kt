@@ -16,11 +16,13 @@ import androidx.constraintlayout.compose.MotionLayout
 import androidx.compose.material.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.graphics.*
+import androidx.constraintlayout.compose.ExperimentalMotionApi
 
 
 import com.amirhusseinSorri.motionlayoutcompose.ui.theme.*
 
 
+@ExperimentalMotionApi
 @Composable
 fun MotionLayoutDemo() {
     Column(Modifier) {
@@ -29,6 +31,7 @@ fun MotionLayoutDemo() {
         }
 }
 
+@ExperimentalMotionApi
 @Composable
 private fun ColorMotion() {
     var animateImage by rememberSaveable{ mutableStateOf(false) }
